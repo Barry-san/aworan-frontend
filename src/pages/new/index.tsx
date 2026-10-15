@@ -140,7 +140,7 @@ export default function NewVideoPage() {
 							</CardHeader>
 							<CardContent>
 								<div
-									role="dialog"
+                  role="dialog"
 									onDragOver={(event) => {
 										event.preventDefault();
 										if (!isSubmitting && !uploaded) setDragging(true);
@@ -326,10 +326,10 @@ export default function NewVideoPage() {
 										<Film className="size-8 text-muted-foreground" />
 									)}
 								</div>
-								<p className="mt-4 break-words text-sm font-medium">
+                <p className="mt-4 wrap-break-word text-sm font-medium">
 									{title.trim() || "Your video title"}
 								</p>
-								<p className="mt-2 break-words text-xs leading-relaxed text-muted-foreground">
+                <p className="mt-2 wrap-break-word text-xs leading-relaxed text-muted-foreground">
 									{description || "Your description will appear here."}
 								</p>
 							</CardContent>
