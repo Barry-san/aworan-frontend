@@ -140,6 +140,7 @@ export default function NewVideoPage() {
 							</CardHeader>
 							<CardContent>
 								<div
+									role="dialog"
 									onDragOver={(event) => {
 										event.preventDefault();
 										if (!isSubmitting && !uploaded) setDragging(true);

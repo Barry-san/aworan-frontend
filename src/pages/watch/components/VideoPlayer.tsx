@@ -17,7 +17,7 @@ export default function VideoPlayer({
 	const [qualities, setQualities] = useState<Quality[]>([]);
 	const [quality, setQuality] = useState(-1);
 	const [error, setError] = useState("");
-	const [attempt, setAttempt] = useState(0);
+  const [_attempt, setAttempt] = useState(0);
 	const [fullscreen, setFullscreen] = useState(false);
 
 	useEffect(() => {
@@ -60,7 +60,7 @@ export default function VideoPlayer({
 			video.removeAttribute("src");
 			video.load();
 		};
-	}, [src, attempt]);
+  }, [src]);
 
 	useEffect(() => {
 		const onFullscreenChange = () =>
