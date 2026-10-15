@@ -159,6 +159,21 @@ function VideoCard({ video }: { video: FeedVideo }) {
 	);
 }
 
+function VideoSkeleton() {
+	return (
+		<Card className="gap-4 pt-0 motion-safe:animate-pulse">
+			<div className="aspect-video bg-muted" />
+			<div className="grid gap-4 px-5 pb-1">
+				<div className="h-5 w-24 rounded bg-muted" />
+				<div className="h-6 w-3/4 rounded bg-muted" />
+				<div className="h-4 rounded bg-muted" />
+				<div className="h-4 w-2/3 rounded bg-muted" />
+				<div className="mt-5 h-8 w-28 rounded bg-muted" />
+			</div>
+		</Card>
+	);
+}
+
 export default function FeedPage() {
 	const [page, setPage] = useState(1);
 	const {
@@ -236,20 +251,8 @@ export default function FeedPage() {
 								aria-hidden
 								className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
 							>
-								{Array.from({ length: 6 }, (_, index) => (
-									<Card
-										key={index}
-										className="gap-4 pt-0 motion-safe:animate-pulse"
-									>
-										<div className="aspect-video bg-muted" />
-										<div className="grid gap-4 px-5 pb-1">
-											<div className="h-5 w-24 rounded bg-muted" />
-											<div className="h-6 w-3/4 rounded bg-muted" />
-											<div className="h-4 rounded bg-muted" />
-											<div className="h-4 w-2/3 rounded bg-muted" />
-											<div className="mt-5 h-8 w-28 rounded bg-muted" />
-										</div>
-									</Card>
+								{Array.from({ length: 6 }, () => (
+									<VideoSkeleton key={`skeleton:${crypto.randomUUID()}`} />
 								))}
 							</div>
 						</div>
