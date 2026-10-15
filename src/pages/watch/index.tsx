@@ -92,11 +92,11 @@ export default function WatchVideoPage() {
 							</div>
 						)}
 						<div className="mt-6">
-							<h1 className="break-words text-2xl font-semibold tracking-tight">
+                    <h1 className="wrap-break-word text-2xl font-semibold tracking-tight">
 								{video.title}
 							</h1>
 							{video.description && (
-								<p className="mt-3 whitespace-pre-wrap break-words text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-3 whitespace-pre-wrap wrap-break-word text-sm leading-relaxed text-muted-foreground">
 									{video.description}
 								</p>
 							)}
